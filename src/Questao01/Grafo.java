@@ -57,6 +57,7 @@ public class Grafo {
         return adjacentes;
     }
 
+
     public void imprimirGrafo() {
         for (Vertice vertice : vertices) {
             System.out.print(vertice + ": ");
@@ -66,4 +67,9 @@ public class Grafo {
             System.out.println();
         }
     }
+
+
+
+
+
 }
