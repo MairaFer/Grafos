@@ -6,11 +6,9 @@ import java.util.List;
 public class Grafo {
     private List<Vertice> vertices;
     private Boolean direcionado = false;
-
     
     public Grafo() {
         this.vertices = new ArrayList<>();
-        
 
     }
 
