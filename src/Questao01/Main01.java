@@ -6,6 +6,7 @@ import java.util.List;
 public class Main01 {
     public static void main(String[] args) {
         Grafo grafo = new Grafo();
+        //Grafo grafo = new Grafo(5);
 
         Vertice v1 = new Vertice("A");
         Vertice v2 = new Vertice("B");
