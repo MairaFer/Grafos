@@ -1,15 +1,19 @@
 package Questao01;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 public class Grafo {
+
+    static int tempo = 0;
+
     private List<Vertice> vertices;
     private Boolean direcionado = false;
     
     public Grafo() {
         this.vertices = new ArrayList<>();
-
     }
 
     public Grafo(Boolean direcionado) {
@@ -47,6 +51,14 @@ public class Grafo {
         return null;
     }
 
+    public int getIndice(Vertice v) {
+        return vertices.indexOf(v);
+    }
+
+    public List<Vertice> getVertices() {
+        return vertices;
+    }
+
     public Aresta pesquisarAresta(Vertice origem, Vertice destino) {
         for (Aresta aresta : origem.getAdjacentes()) {
             if (aresta.getDestino().equals(destino)) {
@@ -75,8 +87,18 @@ public class Grafo {
         }
     }
 
+        public static void dfs(Vertice vertice, Set<Vertice> visitados, Grafo grafo) {
+        // Marcar o vértice como visitado
+        visitados.add(vertice);
+        System.out.println("Visitando: " + vertice);
 
-
+        // Para cada vizinho do vértice, se não foi visitado, faça a chamada recursiva
+        for (Vertice vizinho : grafo.obterAdjacentes(vertice)) {
+            if (!visitados.contains(vizinho)) {
+                dfs(vizinho, visitados, grafo);
+            }
+        }
+    }
 
 
 }
