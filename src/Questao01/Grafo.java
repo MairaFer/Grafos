@@ -1,7 +1,6 @@
 package Questao01;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -36,6 +35,9 @@ public class Grafo {
     public void adicionarAresta(Vertice origem, Vertice destino) {
         Aresta aresta = new Aresta(origem, destino);
         origem.adicionarAresta(aresta);
+        
+        origem.adicionarAdjacente(destino);
+        destino.adicionarAdjacente(origem);
     }
 
     public void removerAresta(Vertice origem, Vertice destino) {
@@ -87,18 +89,16 @@ public class Grafo {
         }
     }
 
-        public static void dfs(Vertice vertice, Set<Vertice> visitados, Grafo grafo) {
-        // Marcar o vértice como visitado
-        visitados.add(vertice);
-        System.out.println("Visitando: " + vertice);
+    public static void dfs(Vertice vertice, Set<Vertice> visitados, Grafo grafo) {
+    // Marcar o vértice como visitado
+    visitados.add(vertice);
+    System.out.println("Visitando: " + vertice);
 
-        // Para cada vizinho do vértice, se não foi visitado, faça a chamada recursiva
-        for (Vertice vizinho : grafo.obterAdjacentes(vertice)) {
-            if (!visitados.contains(vizinho)) {
-                dfs(vizinho, visitados, grafo);
-            }
+    // Para cada vizinho do vértice, se não foi visitado, faça a chamada recursiva
+    for (Vertice vizinho : grafo.obterAdjacentes(vertice)) {
+        if (!visitados.contains(vizinho)) {
+            dfs(vizinho, visitados, grafo);
         }
     }
-
-
+    }
 }
