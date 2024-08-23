@@ -2,9 +2,19 @@ package Questao01;
 
 import java.util.List;
 
+/**1. Desenvolva seu próprio Grafo com no mínimo 
+ as funcionalidades para inserir e remover (vértices 
+e arestas), pesquisar (vértices e arestas), obter 
+adjacentes de um vértice e imprimir (apresenta cada 
+vértice seguido dos seus adjacentes). Observe que, 
+obrigatoriamente, o seu grafo deve ser utilizado 
+em todas as questões que seguem. (0,5 pontos) */
+
+
 public class Main01 {
     public static void main(String[] args) {
         Grafo grafo = new Grafo();
+        //Grafo grafo = new Grafo(5);
 
         Vertice v1 = new Vertice("A");
         Vertice v2 = new Vertice("B");

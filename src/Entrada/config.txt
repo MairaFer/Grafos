@@ -1,0 +1,10 @@
+
+INSTITUTO FEDERAL DE CIÊNCIA E TECNOLOGIA DO MARANHÃO 
+PROF. HÉLDER PEREIRA BORGES 
+ALGORITMOS E ESTRUTURA DE DADOS 2
+
+===========================
+DESCRIÇÃO DE COMO EXECUTAR 
+===========================
+cada projeto tem um main em sua construção representado por Questao01/main01 ~ Questao06/main06
+
