@@ -1,41 +1,24 @@
 package Questao01;
 
-import java.util.List;
+import Util.Aresta;
+import Util.Grafo;
+import Util.Vertice;
 
-public class Main01 {
+public class main01 {
     public static void main(String[] args) {
-        Grafo grafo = new Grafo();
+        Grafo grafo = new Grafo(false); // Cria um grafo não direcionado
+        grafo.construirGrafoDeArquivo("src/Entrada/EntradaQ1.txt");
 
-        Vertice v1 = new Vertice("A");
-        Vertice v2 = new Vertice("B");
-        Vertice v3 = new Vertice("C");
-        Vertice v4 = new Vertice("D");
+        grafo.inserirVertice(new Vertice("Z"));
+        grafo.inserirAresta(new Vertice("Z"), new Vertice("A"), 5);
+        grafo.removerVertice("Z");
+        grafo.removerAresta(new Vertice("A"), new Vertice("B"));
 
-        grafo.adicionarVertice(v1);
-        grafo.adicionarVertice(v2);
-        grafo.adicionarVertice(v3);
-        grafo.adicionarVertice(v4);
+        // Pesquisa de vértice e aresta
+        Vertice v = grafo.pesquisarVertice("A");
+        Aresta a = grafo.pesquisarAresta(new Vertice("A"), new Vertice("B"));
 
-        grafo.adicionarAresta(v1, v2);
-        grafo.adicionarAresta(v1, v3);
-        grafo.adicionarAresta(v3, v4);
-
-        grafo.imprimirGrafo();
-
-        Vertice v = grafo.pesquisarVertice("B");
-        if (v != null) {
-            System.out.println("Vértice encontrado: " + v.getNome());
-        } else {
-            System.out.println("Vértice não encontrado");
-        }
-
-        List<Vertice> adjacentes = grafo.obterAdjacentes(v1);
-        System.out.println("Adjacentes de " + v1.getNome() + ": " + adjacentes);
-
-        grafo.removerAresta(v1, v2);
-        grafo.imprimirGrafo();
-
-        grafo.removerVertice(v3);
+        // Imprimir o grafo
         grafo.imprimirGrafo();
     }
 }

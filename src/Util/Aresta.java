@@ -1,12 +1,14 @@
-package Questao01;
+package Util;
 
 public class Aresta {
     private Vertice origem;
     private Vertice destino;
+    private int peso;
 
-    public Aresta(Vertice origem, Vertice destino) {
+    public Aresta(Vertice origem, Vertice destino, int peso) {
         this.origem = origem;
         this.destino = destino;
+        this.peso = peso;
     }
 
     public Vertice getOrigem() {
@@ -17,8 +19,12 @@ public class Aresta {
         return destino;
     }
 
+    public int getPeso() {
+        return peso;
+    }
+
     @Override
     public String toString() {
-        return origem.getNome() + " -> " + destino.getNome();
+        return origem + " -> " + destino + " [peso=" + peso + "]";
     }
 }
