@@ -15,8 +15,12 @@ saída deverá ser: O grafo NÃO é bipartido ou O
 grafo É bipartido: Partição 1 (A, B, C, ...)
 e Partição 2 (E, F, G ...) (2,0 pontos).
  */
-import Questao01.Grafo;
-import Questao01.Vertice;
+
+ import Util.Aresta;
+ import Util.Grafo;
+ import Util.Vertice;
+
+
 
 public class Main04 {
 

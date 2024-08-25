@@ -1,12 +1,13 @@
 
 package lerarquivo;
-import Questao01.Grafo;
-import Questao01.Vertice;
+import Util.Aresta;
+import Util.Grafo;
+import Util.Vertice;
 import java.io.*;
 
 public class LerGrafo {
 
-    public static Grafo carregarArquivo(String arquivo) throws IOException {
+    public static Util.Grafo carregarArquivo(String arquivo) throws IOException {
         Grafo grafo = new Grafo();
         try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
             String linha;

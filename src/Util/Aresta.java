@@ -1,4 +1,4 @@
-package Questao01;
+package Util;
 
 public class Aresta {
     private Vertice origem;

@@ -1,4 +1,4 @@
-package Questao01;
+package Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,5 +118,9 @@ public class Grafo {
             dfs(vizinho, visitados, grafo);
         }
     }
+    }
+
+    public void kruskal(Grafo grafo, Set<Vertice> peso){
+        
     }
 }

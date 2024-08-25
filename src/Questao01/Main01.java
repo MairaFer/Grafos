@@ -1,6 +1,11 @@
 package Questao01;
 
+import java.io.IOException;
 import java.util.List;
+import Util.Aresta;
+import Util.Grafo;
+import Util.Vertice;
+import lerarquivo.LerGrafo;
 
 /**1. Desenvolva seu próprio Grafo com no mínimo 
  as funcionalidades para inserir e remover (vértices 
@@ -12,9 +17,9 @@ em todas as questões que seguem. (0,5 pontos) */
 
 
 public class Main01 {
-    public static void main(String[] args) {
-        Grafo grafo = new Grafo();
-        //Grafo grafo = new Grafo(5);
+    public static void main(String[] args) throws IOException {
+    Grafo grafo = new Grafo();
+   // Grafo grafo = LerGrafo.carregarArquivo("src/Entrada/dadosQ4.txt");
 
         Vertice v1 = new Vertice("A");
         Vertice v2 = new Vertice("B");

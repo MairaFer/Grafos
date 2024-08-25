@@ -19,9 +19,13 @@ vértice. A solução deve ser
 apresentada no padrão de uma linha 
 para cada vértice: Vértice (Chegada: 
 Partida) (1,5 pontos) */
-import Questao01.Grafo;
-import Questao01.Vertice;
+
 import lerarquivo.LerGrafo;
+import Util.Aresta;
+import Util.Grafo;
+import Util.Vertice;
+
+
 
 public class Main02 {
 
