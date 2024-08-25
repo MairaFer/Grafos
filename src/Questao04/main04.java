@@ -1,8 +1,8 @@
 package Questao04;
-
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+import lerarquivo.LerGrafo;
 /**
   Dado um grafo qualquer, verificar se ele é
   bipartido ou não. Por definição, um grafo bipartido é
@@ -20,13 +20,10 @@ import Questao01.Vertice;
 
 public class Main04 {
 
-    public static void main(String[] args) {
-
-
-        Grafo grafo = grafoBipartido();
+    public static void main(String[] args) throws IOException {
+ 
+        Grafo grafo = LerGrafo.carregarArquivo("src/Entrada/dadosQ4.txt");
         ehBipartido(grafo);
-
-        System.out.println("The end");
 
     }
 
@@ -81,83 +78,5 @@ public class Main04 {
         System.out.println("Particao B: " + particaoB);
     }
 
-    static Grafo grafoNaoBipartido() {
-        Grafo grafo = new Grafo(true);
 
-        Vertice vA = new Vertice("A");
-        Vertice vB = new Vertice("B");
-        Vertice vC = new Vertice("C");
-        Vertice vD = new Vertice("D");
-        Vertice vE = new Vertice("E");
-        Vertice vF = new Vertice("F");
-        Vertice vG = new Vertice("G");
-        Vertice vH = new Vertice("H");
-        Vertice vI = new Vertice("I");
-
-        grafo.adicionarVertice(vA);
-        grafo.adicionarVertice(vB);
-        grafo.adicionarVertice(vC);
-        grafo.adicionarVertice(vD);
-        grafo.adicionarVertice(vE);
-        grafo.adicionarVertice(vF);
-        grafo.adicionarVertice(vG);
-        grafo.adicionarVertice(vH);
-        grafo.adicionarVertice(vI);
-
-        grafo.adicionarAresta(vA, vB);
-        grafo.adicionarAresta(vA, vC);
-        grafo.adicionarAresta(vA, vF);
-        grafo.adicionarAresta(vB, vG);
-        grafo.adicionarAresta(vB, vH);
-        grafo.adicionarAresta(vC, vD);
-        grafo.adicionarAresta(vC, vI);
-        grafo.adicionarAresta(vD, vI);
-        grafo.adicionarAresta(vE, vF);
-        grafo.adicionarAresta(vE, vG);
-
-        return grafo;
-    }
-    
-    static Grafo grafoBipartido() {
-        Grafo grafo = new Grafo(true);
-
-        Vertice vA = new Vertice("A");
-        Vertice vB = new Vertice("B");
-        Vertice vC = new Vertice("C");
-        Vertice vD = new Vertice("D");
-        Vertice vE = new Vertice("E");
-        Vertice vF = new Vertice("F");
-        Vertice vG = new Vertice("G");
-        Vertice vH = new Vertice("H");
-        Vertice vI = new Vertice("I");
-
-        grafo.adicionarVertice(vA);
-        grafo.adicionarVertice(vB);
-        grafo.adicionarVertice(vC);
-        grafo.adicionarVertice(vD);
-        grafo.adicionarVertice(vE);
-        grafo.adicionarVertice(vF);
-        grafo.adicionarVertice(vG);
-        grafo.adicionarVertice(vH);
-        grafo.adicionarVertice(vI);
-
-        grafo.adicionarAresta(vA, vH);
-        grafo.adicionarAresta(vA, vB);
-        grafo.adicionarAresta(vA, vD);
-        grafo.adicionarAresta(vB, vG);
-        grafo.adicionarAresta(vB, vI);
-        grafo.adicionarAresta(vB, vC);
-        grafo.adicionarAresta(vC, vF);
-        grafo.adicionarAresta(vC, vD);
-        grafo.adicionarAresta(vD, vI);
-        grafo.adicionarAresta(vD, vE);
-        grafo.adicionarAresta(vE, vH);
-        grafo.adicionarAresta(vE, vF);
-        grafo.adicionarAresta(vF, vI);
-        grafo.adicionarAresta(vF, vG);
-        grafo.adicionarAresta(vG, vH);
-        grafo.adicionarAresta(vH, vI);
-
-        return grafo;
-    }
 }

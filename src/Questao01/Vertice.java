@@ -10,6 +10,7 @@ public class Vertice {
     private Integer tempoChegada;
     private Integer tempoPartida;
     private Integer cor;
+    private Integer peso;
 
     public Vertice(String nome) {
         this.nome = nome;
@@ -24,6 +25,7 @@ public class Vertice {
     public List<Aresta> getAdjacentes() {
         return adjacentes;
     }
+
 
     public List<Vertice> getVerticesAdjacentes() {
         List<Vertice> verticesAdjacentes = new ArrayList<>();
@@ -89,6 +91,14 @@ public class Vertice {
 
     public void setCor(Integer cor) {
         this.cor = cor;
+    }
+
+    public Integer getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Integer cor) {
+        this.cor = peso;
     }
 
     

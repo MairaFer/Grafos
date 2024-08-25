@@ -8,3 +8,7 @@ DESCRIÇÃO DE COMO EXECUTAR
 ===========================
 cada projeto tem um main em sua construção representado por Questao01/main01 ~ Questao06/main06
 
+cada função chama um arquivo e retorna um grafo.
+    Grafo grafo = LerGrafo.carregarArquivo("src/Entrada/dados(numquestao).txt");
+
+

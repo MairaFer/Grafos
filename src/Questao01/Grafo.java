@@ -26,7 +26,6 @@ public class Grafo {
 
     public void removerVertice(Vertice vertice) {
         vertices.remove(vertice);
-        // Remove as arestas associadas ao vértice
         for (Vertice v : vertices) {
             v.getAdjacentes().removeIf(aresta -> aresta.getDestino().equals(vertice));
         }
@@ -34,6 +33,15 @@ public class Grafo {
 
     public void adicionarAresta(Vertice origem, Vertice destino) {
         Aresta aresta = new Aresta(origem, destino);
+        origem.adicionarAresta(aresta);
+        
+        origem.adicionarAdjacente(destino);
+        destino.adicionarAdjacente(origem);
+    }
+
+
+    public void adicionarAresta(Vertice origem, Vertice destino, int peso) {
+        Aresta aresta = new Aresta(origem, destino, peso);
         origem.adicionarAresta(aresta);
         
         origem.adicionarAdjacente(destino);
@@ -84,6 +92,16 @@ public class Grafo {
             System.out.print(vertice + ": ");
             for (Aresta aresta : vertice.getAdjacentes()) {
                 System.out.print(aresta.getDestino() + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void imprimirGrafoPeso() {
+        for (Vertice vertice : vertices) {
+            System.out.print(vertice + ": ");
+            for (Aresta aresta : vertice.getAdjacentes()) {
+                System.out.print(aresta.getDestino().getNome() + " (Peso: " + aresta.getPeso() + ") ");
             }
             System.out.println();
         }
