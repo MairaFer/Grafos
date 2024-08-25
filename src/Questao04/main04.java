@@ -13,7 +13,7 @@ apresentadas duas maneiras de verificar se
 um grafo é bipartido, implemenar uma delas. A
 saída deverá ser: O grafo NÃO é bipartido ou O
 grafo É bipartido: Partição 1 (A, B, C, ...)
-e Partição 2 (E, F, G ...) (2,0 pontos)
+e Partição 2 (E, F, G ...) (2,0 pontos).
  */
 import Questao01.Grafo;
 import Questao01.Vertice;
