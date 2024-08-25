@@ -19,6 +19,7 @@ Partida) (1,5 pontos) */
 import Util.Grafo;
 import Util.Vertice;
 import Util.DFS;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -65,6 +66,17 @@ public class main02 {
         // Instanciar e executar o DFS
         DFS dfs = new DFS(grafo);
         dfs.executarDFS(grafo);
-        dfs.imprimirTempos(grafo);
+
+        // Imprimir tempos de chegada e partida
+        imprimirTempos(dfs, grafo);
+    }
+
+    // Método para imprimir os tempos de chegada e partida
+    private static void imprimirTempos(DFS dfs, Grafo grafo) {
+        for (Vertice v : grafo.getVertices()) {
+            int chegada = dfs.getTempoChegada(v);
+            int saida = dfs.getTempoSaida(v);
+            System.out.println("Vértice " + v.getNome() + " (Chegada: " + chegada + ", Partida: " + saida + ")");
+        }
     }
 }

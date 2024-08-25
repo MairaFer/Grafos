@@ -1,10 +1,10 @@
-A;B;1
-A;C;1
-A;F;1
-B;G;1
-B;H;1
-C;I;1
-C;D;1
-D;I;1
-E;F;1
-E;G;1
+A B 1
+A C 1
+A F 1
+B G 1
+B H 1
+C I 1
+C D 1
+D I 1
+E F 1
+E G 1

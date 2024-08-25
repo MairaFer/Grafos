@@ -3,15 +3,15 @@ package Questao03;
 import Util.DFS;
 import Util.Grafo;
 import Util.Vertice;
-import java.util.Stack;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class main03 {
     public static void main(String[] args) {
         // Cria um grafo direcionado lendo os dados de um arquivo
         Grafo grafo = new Grafo(true);
-
         grafo.construirGrafoDeArquivo("src/Entrada/EntradaQ3.txt");
 
         // Executa DFS e encontra o vértice raiz
@@ -31,10 +31,10 @@ public class main03 {
         Stack<Vertice> pilha = new Stack<>();
         List<Vertice> visitados = new ArrayList<>();
 
-        // Realiza DFS para todos os vértices e preenche a pilha com base no tempo de finalização
+        // Preenche a pilha com base no tempo de finalização do DFS
         for (Vertice vertice : grafo.getVertices()) {
             if (!visitados.contains(vertice)) {
-                dfs.executarDFS(grafo);
+                dfs.executarDFSAPartirDoVertice(vertice, visitados);
                 pilha.push(vertice);
             }
         }
@@ -53,7 +53,7 @@ public class main03 {
     private static boolean verificaConectividade(Grafo grafo, Vertice vertice) {
         List<Vertice> visitados = new ArrayList<>();
         DFS dfs = new DFS(grafo);
-        dfs.executarDFS(grafo); // Executa o DFS a partir do vértice inicial
+        dfs.executarDFSAPartirDoVertice(vertice, visitados); // Executa o DFS a partir do vértice inicial
 
         for (Vertice v : grafo.getVertices()) {
             if (!visitados.contains(v)) {
