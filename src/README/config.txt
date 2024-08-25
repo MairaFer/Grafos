@@ -6,5 +6,85 @@ ALGORITMOS E ESTRUTURA DE DADOS 2
 ===========================
 DESCRIÇÃO DE COMO EXECUTAR 
 ===========================
-cada projeto tem um main em sua construção representado por Questao01/main01 ~ Questao06/main06
 
+O código está dividido em várias questões, cada uma abordando um problema específico.
+cada uma com uma main em sua construção representado por Questao01/main01 ~ Questao06/main06
+
+**Estrutura do Projeto**
+
+O projeto é dividido nos seguintes pacotes:
+
+
+Entrada: Com arquivos txt de entrada para construir um grafo
+Questao01: Manipulação básica de grafos.
+Questao02: Implementação de busca em profundidade (DFS) e impressão dos tempos de chegada e partida dos vértices.
+Questao03: Identificação do vértice raiz em um grafo direcionado.
+Questao04: Verificação de bipartição de um grafo.
+Questao05: Algoritmo de Kruskal para encontrar a Árvore Geradora Mínima (MST).
+Questao06: Encontrar um ciclo mínimo usando o algoritmo de Kruskal e conversão para ciclo Hamiltoniano.
+
+
+Os arquivos de entrada estão localizados no pacote Entrada e têm a seguinte estrutura:
+
+A B 7
+A G 5
+B C 8
+B D 7
+B G 9
+C D 5
+D E 9
+D F 8
+D G 15
+E F 11
+F G 6
+
+Cada linha representa uma aresta do grafo, onde:
+
+O primeiro e o segundo campo são os nomes dos vértices que a aresta conecta.
+O terceiro campo é o peso da aresta.
+
+
+**Configuração e Execução***
+1. Questão 01: Manipulação Básica de Grafos
+Descrição: Cria um grafo não direcionado, insere e remove vértices e arestas, e imprime o grafo.
+Classe Principal: Questao01.main01
+Arquivo de Entrada: src/Entrada/EntradaQ1.txt
+
+2. Questão 02: Busca em Profundidade (DFS)
+Descrição: Executa DFS em um grafo direcionado e imprime os tempos de chegada e partida dos vértices.
+Classe Principal: Questao02.main02
+Arquivo de Entrada: src/Entrada/EntradaQ2.txt
+
+3. Questão 03: Identificação do Vértice Raiz
+Descrição: Identifica e imprime o vértice raiz em um grafo direcionado.
+Classe Principal: Questao03.main03
+Arquivo de Entrada: src/Entrada/EntradaQ3.txt
+
+4. Questão 04: Verificação de Bipartição
+Descrição: Verifica se um grafo é bipartido e exibe as partições.
+Classe Principal: Questao04.main04
+Arquivo de Entrada: src/Entrada/EntradaQ4.txt
+
+5. Questão 05: Árvore Geradora Mínima (MST) com Kruskal
+Descrição: Encontra e imprime a MST usando o algoritmo de Kruskal.
+Classe Principal: Questao05.main05
+Arquivo de Entrada: src/Entrada/EntradaQ5.txt
+
+6. Questão 06: Ciclo Mínimo e Conversão para Ciclo Hamiltoniano
+Descrição: Encontra um ciclo mínimo usando o algoritmo de Kruskal e converte para ciclo Hamiltoniano.
+Classe Principal: Questao06.main06
+Arquivo de Entrada: src/Entrada/EntradaQ6.txt
+Pacote Util
+Contém classes auxiliares para manipulação de grafos:
+
+**Pacote Util**
+Aresta: Representa uma aresta no grafo.
+Grafo: Representa o grafo e fornece métodos para manipulação.
+DFS: Implementa o algoritmo de busca em profundidade (DFS).
+Vertice: Representa um vértice no grafo.
+Kruskal: Implementa o algoritmo de Kruskal para encontrar MST.
+
+***IMPORTANTE***
+
+Verifique sempre o formato do arquivo, deve ser exatamente
+no modelo apresentado com espaços e SEM virgula/ponto e virgula.

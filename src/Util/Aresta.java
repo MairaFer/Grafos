@@ -23,6 +23,9 @@ public class Aresta {
     public int getPeso() {
         return peso;
     }
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
 
     @Override
     public String toString() {
