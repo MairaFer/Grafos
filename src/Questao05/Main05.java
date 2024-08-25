@@ -10,21 +10,8 @@ public class Main05 {
 
 
     public static void main(String[] args)  throws IOException {
-        Grafo grafo = LerGrafo.carregarArquivo("src/Entrada/dadosQ4.txt");
-
-
-
-
-
-
-
-
+        Grafo grafo = LerGrafo.carregarArquivo("src/Entrada/dadosQ5.txt");
+        grafo.ordenarArestasPorPeso();
 
     }
-    
-
-
-
-
-
 }

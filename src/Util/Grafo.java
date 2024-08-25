@@ -1,6 +1,9 @@
 package Util;
-
+import Util.Aresta;
+import Util.Vertice;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
@@ -9,10 +12,12 @@ public class Grafo {
     static int tempo = 0;
 
     private List<Vertice> vertices;
+    private List<Aresta> arestas; // Lista de arestas para Kruskal
     private Boolean direcionado = false;
-    
+
     public Grafo() {
         this.vertices = new ArrayList<>();
+        this.arestas = new ArrayList<>(); // para kruskal
     }
 
     public Grafo(Boolean direcionado) {
@@ -34,16 +39,15 @@ public class Grafo {
     public void adicionarAresta(Vertice origem, Vertice destino) {
         Aresta aresta = new Aresta(origem, destino);
         origem.adicionarAresta(aresta);
-        
+
         origem.adicionarAdjacente(destino);
         destino.adicionarAdjacente(origem);
     }
 
-
     public void adicionarAresta(Vertice origem, Vertice destino, int peso) {
         Aresta aresta = new Aresta(origem, destino, peso);
         origem.adicionarAresta(aresta);
-        
+
         origem.adicionarAdjacente(destino);
         destino.adicionarAdjacente(origem);
     }
@@ -86,7 +90,6 @@ public class Grafo {
         return adjacentes;
     }
 
-
     public void imprimirGrafo() {
         for (Vertice vertice : vertices) {
             System.out.print(vertice + ": ");
@@ -108,19 +111,41 @@ public class Grafo {
     }
 
     public static void dfs(Vertice vertice, Set<Vertice> visitados, Grafo grafo) {
-    // Marcar o vértice como visitado
-    visitados.add(vertice);
-    System.out.println("Visitando: " + vertice);
+        // Marcar o vértice como visitado
+        visitados.add(vertice);
+        System.out.println("Visitando: " + vertice);
 
-    // Para cada vizinho do vértice, se não foi visitado, faça a chamada recursiva
-    for (Vertice vizinho : grafo.obterAdjacentes(vertice)) {
-        if (!visitados.contains(vizinho)) {
-            dfs(vizinho, visitados, grafo);
+        // Para cada vizinho do vértice, se não foi visitado, faça a chamada recursiva
+        for (Vertice vizinho : grafo.obterAdjacentes(vertice)) {
+            if (!visitados.contains(vizinho)) {
+                dfs(vizinho, visitados, grafo);
+            }
         }
     }
-    }
 
-    public void kruskal(Grafo grafo, Set<Vertice> peso){
-        
-    }
+    public void ordenarArestasPorPeso() {
+        int n = arestas.size();
+    
+        // Algoritmo de ordenação por seleção
+        for (int i = 0; i < n - 1; i++) {
+            // Encontra o índice da aresta com o menor peso
+            int indiceMinimo = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arestas.get(j).getPeso() < arestas.get(indiceMinimo).getPeso()) {
+                    indiceMinimo = j;
+                }
+            }
+    
+            // Troca a aresta de menor peso com a aresta atual
+            Aresta temp = arestas.get(indiceMinimo);
+            arestas.set(indiceMinimo, arestas.get(i));
+            arestas.set(i, temp);
+        }
+
 }
+
+
+
+
+
+
