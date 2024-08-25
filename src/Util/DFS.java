@@ -4,17 +4,20 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Stack;
 public class DFS {
     private int tempo;
     private int[] tempoChegada;
     private int[] tempoSaida;
     private Grafo grafo;
+    private List<Aresta> cicloAtual;
     public DFS(Grafo grafo) {
         int numeroVertices = grafo.getVertices().size();
         this.tempo = 0;
         this.tempoChegada = new int[numeroVertices];
         this.tempoSaida = new int[numeroVertices];
         this.grafo = grafo;
+        this.cicloAtual = new ArrayList<>();
     }
 
     // Método para iniciar o DFS em todos os vértices
@@ -36,6 +39,9 @@ public class DFS {
         for (Vertice vizinho : grafo.obterAdjacentes(vertice)) {
             if (!visitados.contains(vizinho)) {
                 dfs(vizinho, visitados, grafo);
+            } else if (tempoChegada[grafo.getIndice(vizinho)] < tempoChegada[indiceVertice]) {
+                // Encontra o ciclo
+                cicloAtual.add(new Aresta(vertice, vizinho, 0));
             }
         }
 
@@ -49,6 +55,10 @@ public class DFS {
             System.out.println("Vértice " + v.getNome() + " (Chegada: " + tempoChegada[indice] + ", Partida: " + tempoSaida[indice] + ")");
         }
     }
+    public List<Aresta> encontrarCicloMinimo() {
+        return cicloAtual;
+    }
+
     public void executarDFSAPartirDoVertice(Vertice vertice, List<Vertice> visitados) {
         if (!visitados.contains(vertice)) {
             dfsParticular(vertice, visitados, this.grafo);

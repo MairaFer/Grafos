@@ -19,6 +19,7 @@ public class Aresta {
         return destino;
     }
 
+
     public int getPeso() {
         return peso;
     }
